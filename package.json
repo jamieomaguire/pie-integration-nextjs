@@ -9,11 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@justeat/pie-design-tokens": "^5.3.1",
+    "@justeattakeaway/pie-button": "^0.18.0",
+    "@justeattakeaway/pie-modal": "^0.10.0",
+    "@lit-labs/nextjs": "^0.1.2",
+    "@lit-labs/react": "^1.2.1",
     "@types/node": "20.4.1",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
+    "lit": "^2.7.6",
     "next": "13.4.9",
     "react": "18.2.0",
     "react-dom": "18.2.0",
