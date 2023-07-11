@@ -5,7 +5,6 @@ import styles from '@/styles/Home.module.css'
 import { PieButton } from '@justeattakeaway/pie-button/dist/react';
 import { PieModal } from '@justeattakeaway/pie-modal/dist/react';
 
-
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -43,6 +42,19 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
+        <h1 className={styles.title}>PIE Integration: NextJS</h1>
+
+        <p>This is an example app that integrates PIE web components in to NextJS 13</p>
+        <p>The required dependencies are:</p>
+        <ul>
+          <li>@justeattakeaway/pie-button</li>
+          <li>@justeattakeaway/pie-modal</li>
+          <li>@justeat/pie-design-tokens</li>
+          <li>lit</li>
+          <li>@lit-labs/nextjs</li>
+          <li>@lit-labs/react</li>
+        </ul>
+
         <PieButton onClick={toggleModal}>Open the counter controls</PieButton>
         <PieModal
           ref={myRef}
@@ -52,13 +64,12 @@ export default function Home() {
           isDismissible={true}
           isFullWidthBelowMid={true}
           size="large">
-
-          <p>Use the controls to increment and decrement the counter :)</p>
-          <p>Counter: { count }</p>
-
-
-            <PieButton size="xsmall" onClick={increment}>Increment</PieButton>
-            <PieButton size="xsmall" onClick={decrement}>Decrement</PieButton>
+            <div className={styles.modalInner}>
+              <p>Use the controls to increment and decrement the counter :)</p>
+              <p>Counter: { count }</p>
+              <PieButton size="xsmall" onClick={increment}>Increment</PieButton>
+              <PieButton size="xsmall" onClick={decrement}>Decrement</PieButton>
+            </div>
         </PieModal>
       </main>
     </>
