@@ -30,6 +30,10 @@ export default function Home() {
 
   }, []);
 
+  const [count, setCount] = useState(0);
+  const increment = () => setCount(count + 1);
+  const decrement = () => setCount(count - 1);
+
   return (
     <>
       <Head>
@@ -39,7 +43,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <PieButton onClick={toggleModal}>Hello, Clarice</PieButton>
+        <PieButton onClick={toggleModal}>Open the counter controls</PieButton>
         <PieModal
           ref={myRef}
           isOpen={isModalOpen}
@@ -48,7 +52,13 @@ export default function Home() {
           isDismissible={true}
           isFullWidthBelowMid={true}
           size="large">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim maxime, magnam totam officiis earum praesentium quos, necessitatibus reprehenderit vitae, quas sit! Modi nemo voluptatibus quaerat odio tenetur ea, accusantium quis!</p>
+
+          <p>Use the controls to increment and decrement the counter :)</p>
+          <p>Counter: { count }</p>
+
+
+            <PieButton size="xsmall" onClick={increment}>Increment</PieButton>
+            <PieButton size="xsmall" onClick={decrement}>Decrement</PieButton>
         </PieModal>
       </main>
     </>
